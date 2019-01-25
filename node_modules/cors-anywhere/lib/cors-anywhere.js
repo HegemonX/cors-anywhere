@@ -131,11 +131,7 @@ function proxyRequest(req, res, proxy) {
   }
 
   // Start proxying the request
-  try {
-    proxy.web(req, res, proxyOptions);
-  } catch (err) {
-    proxy.emit('error', err, req, res);
-  }
+  proxy.web(req, res, proxyOptions);
 }
 
 /**
